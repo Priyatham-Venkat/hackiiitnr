@@ -1,6 +1,10 @@
 <?php
 session_start();
+$name = $_SESSION['uname'] ;
+$email = $_SESSION['email'] ;
+$location = $_SESSION['location'] ;
 
+$con = mysqli_connect("localhost","root","","formycity");
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +48,7 @@ session_start();
           <li class="nav-profile">
             <div class="nav-profile-image">
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <div class="nav-profile-name"><!-- <?php echo "$uname" ?> -->SUNDAR KUMAR</div>
+              <div class="nav-profile-name"><?php echo $name ; ?></div>
             </div>
           </li>
         </ul>
@@ -62,7 +66,57 @@ session_start();
       	</div>
       	</div>
     </div>
-      gdhadghsagdhasgdhsadhsadhgdgdahf
+      <div class="row">
+      	<div class="col-md-3">
+      		<div class="panel panel-primary">
+      			<div class="panel panel-heading">
+      				No. of Causes Served
+      			</div>
+      			<div class="panel-body" align="center" style="font-size: 20px;">
+      				<?php 
+      				$res = mysqli_query($con,"select count(eid) from volunteer where uname = '$name' ;");
+      				$row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+      				echo $row['count(eid)'] ;
+      				?>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-md-3">
+      		<div class="panel panel-primary">
+      			<div class="panel panel-heading">
+      				No. of Events Available in <?php echo $location ; ?>
+      			</div>
+      			<div class="panel-body" align="center" style="font-size: 20px;">
+      				<?php 
+      				$tot = 0 ;
+      				$serv = array("oldage","orphanage","awareness","teaching","cleaning","health","plantation");
+      				foreach ($serv as $val)
+      			    {
+      					$res = mysqli_query($con,"select count(eid) from $val where location = '$location';");
+      					$row = mysqli_fetch_array($res, MYSQLI_ASSOC) ;
+      					$tot += $row['count(eid)'];
+      				}
+      				echo $tot ;
+      				?>
+      			</div>
+      		</div>
+      	</div>
+      	<div class="col-lg-6">
+      		<div class="panel panel-primary">
+      			<div class="panel panel-heading" align="center">
+      				PLEASE DONATE TOWARDS YOUR CITY
+      			</div>
+      			<div class="panel-body" align="center">
+      				<a href="#" class="btn btn-success">Donate Here !</a>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+      <div class="panel panel-success">
+      	<div class="panel-body">
+      		Sample Feed Data here !
+      	</div>
+      </div>
   </div>
   </section>
 </body>

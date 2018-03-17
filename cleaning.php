@@ -8,7 +8,7 @@ $location = $_SESSION['location'] ;
 $today = date("Y-m-d H:i:s");
 
 $con = mysqli_connect("localhost","root","","formycity") ;
-$res = mysqli_query($con,"select * from orphanage where location = '$location' and edate >= '$today' ;") ;
+$res = mysqli_query($con,"select * from cleaning where location = '$location' and edate >= '$today' ;") ;
 if(!$res)
 {
   die("Couldnt Query DB");
@@ -17,7 +17,7 @@ if(!$res)
 if(isset($_POST['submitj']))
 {
   $eid = $_POST['evid'] ;
-  $join = mysqli_query($con,"insert into volunteer values('$eid','$name','orphanage');");
+  $join = mysqli_query($con,"insert into volunteer values('$eid','$name','cleaning');");
   if(!$join)
     die("Couldnt Query DB");
 }
@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
   $eetime = $_POST['eetime'] ;
   $ereq = $_POST['ereq'] ;
 
-  $new = mysqli_query($con, "insert into orphanage(ename,edate,eaddr,estime,eetime,ereq,location) values('$ename','$edate','$eaddr','$estime','$eetime','$ereq','$location')");
+  $new = mysqli_query($con, "insert into cleaning(ename,edate,eaddr,estime,eetime,ereq,location) values('$ename','$edate','$eaddr','$estime','$eetime','$ereq','$location')");
 
   if(!$new)
     die("Couldnt Query DB");
@@ -62,9 +62,9 @@ if(isset($_POST['submit']))
   <div id="sidebar-nav">   
     <ul>
       <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li class="active"><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
+      <li><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
       <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
-      <li><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
+      <li class="active"><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
       <li><a href="awareness.php"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
       <li><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
       <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>

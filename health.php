@@ -62,13 +62,13 @@ if(isset($_POST['submit']))
   <div id="sidebar-nav">   
     <ul>
       <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li class="active"><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
+      <li><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
       <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
       <li><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
       <li><a href="awareness.php"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
       <li><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
       <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>
-      <li><a href="health.php"><i class="fa fa-calendar"></i>Health Drives</a></li>
+      <li class="active"><a href="health.php"><i class="fa fa-calendar"></i>Health Drives</a></li>
     </ul>
   </div>
 </section>

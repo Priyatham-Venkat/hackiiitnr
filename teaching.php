@@ -8,7 +8,7 @@ $location = $_SESSION['location'] ;
 $today = date("Y-m-d H:i:s");
 
 $con = mysqli_connect("localhost","root","","formycity") ;
-$res = mysqli_query($con,"select * from oldage where location = '$location' and edate >= '$today' ;") ;
+$res = mysqli_query($con,"select * from teaching where location = '$location' and edate >= '$today' ;") ;
 if(!$res)
 {
   die("Couldnt Query DB");
@@ -17,7 +17,7 @@ if(!$res)
 if(isset($_POST['submitj']))
 {
   $eid = $_POST['evid'] ;
-  $join = mysqli_query($con,"insert into volunteer values('$eid','$name','oldage');");
+  $join = mysqli_query($con,"insert into volunteer values('$eid','$name','teaching');");
   if(!$join)
     die("Couldnt Query DB");
 }
@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
   $eetime = $_POST['eetime'] ;
   $ereq = $_POST['ereq'] ;
 
-  $new = mysqli_query($con, "insert into oldage(ename,edate,eaddr,estime,eetime,ereq,location) values('$ename','$edate','$eaddr','$estime','$eetime','$ereq','$location')");
+  $new = mysqli_query($con, "insert into teaching(ename,edate,eaddr,estime,eetime,ereq,location) values('$ename','$edate','$eaddr','$estime','$eetime','$ereq','$location')");
 
   if(!$new)
     die("Couldnt Query DB");
@@ -62,11 +62,11 @@ if(isset($_POST['submit']))
   <div id="sidebar-nav">   
     <ul>
       <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-      <li class="active"><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
+      <li><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
       <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
       <li><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
       <li><a href="awareness.php"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
-      <li><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
+      <li class="active"><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
       <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>
       <li><a href="health.php"><i class="fa fa-calendar"></i>Health Drives</a></li>
     </ul>
@@ -93,7 +93,7 @@ if(isset($_POST['submit']))
     <div class="content-header">
     	<div class="row">
     		<div class="col-md-9">
-      <h1>Old Age Home Services</h1>
+      <h1>Teaching Campaign</h1>
       	</div>
       	<div class="col-md-3" align="right">
       		<a href="logout.php" class="btn btn-danger">LOG OUT</a>
