@@ -8,9 +8,35 @@ $location = $_SESSION['location'] ;
 $today = date("Y-m-d H:i:s");
 
 $con = mysqli_connect("localhost","root","","formycity") ;
-$res = mysqli_query($con,"select * from oldage where location = '$location' and date >= '$today' ;") ;
+$res = mysqli_query($con,"select * from oldage where location = '$location' and edate >= '$today' ;") ;
+if(!$res)
+{
+  die("Couldnt Query DB");
+}
 
+if(isset($_POST['submitj']))
+{
+  $eid = $_POST['evid'] ;
+  $join = mysqli_query($con,"insert into volunteer values('$eid','$name','oldage');");
+  if(!$join)
+    die("Couldnt Query DB");
+}
 
+if(isset($_POST['submit']))
+{
+  $ename = $_POST['ename'] ;
+  $edate = $_POST['edate'] ;
+  $eaddr = $_POST['eaddr'] ;
+  $estime = $_POST['estime'] ;
+  $eetime = $_POST['eetime'] ;
+  $ereq = $_POST['ereq'] ;
+
+  $new = mysqli_query($con, "insert into oldage(ename,edate,eaddr,estime,eetime,ereq,location) values('$ename','$edate','$eaddr','$estime','$eetime','$ereq','$location')");
+
+  if(!$new)
+    die("Couldnt Query DB");
+
+}
 
 ?>
 
@@ -56,7 +82,7 @@ $res = mysqli_query($con,"select * from oldage where location = '$location' and 
           <li class="nav-profile">
             <div class="nav-profile-image">
               <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <div class="nav-profile-name"><!-- <?php echo "$uname" ?> -->SUNDAR KUMAR</div>
+              <div class="nav-profile-name"><?php echo "$name" ?></div>
             </div>
           </li>
         </ul>
@@ -74,7 +100,7 @@ $res = mysqli_query($con,"select * from oldage where location = '$location' and 
       	</div>
       	</div>
     </div>
-     <div class="panel panel-default">
+     <div class="panel panel-primary">
       <div class="panel panel-heading">
         <b>Join Event / Volunteer</b>
       </div>
@@ -91,9 +117,10 @@ $res = mysqli_query($con,"select * from oldage where location = '$location' and 
              <td>Join</td>
            </th>
            <?php
-            while ( $row = mysqli_fetch_array($res,MYSQLI_ASSOC) ) 
+            while ( $row = mysqli_fetch_array($res, MYSQLI_ASSOC) ) 
             {
               echo "<tr>";
+              echo "<td></td>";
               echo "<td>" . $row['eid'] . "</td>";
               echo "<td>" . $row['ename'] . "</td>";
               echo "<td>" . $row['edate'] . "</td>";
@@ -101,11 +128,61 @@ $res = mysqli_query($con,"select * from oldage where location = '$location' and 
               echo "<td>" . $row['estime'] . "</td>";
               echo "<td>" . $row['eetime'] . "</td>";
               echo "<td>" . $row['ereq'] . "</td>";
-              echo "<td> <button class='btn btn-success'> Join </button> </td>";
+              echo "<td> 
+              <form method='post'>
+              <input type='hidden' name='evid' value=".$row['eid'].">
+              <input type='submit' class='btn btn-success' name='submitj' value='Join'>
+              </form>
+               </td>";
               echo "</tr>";
             }
            ?>
          </table>
+       </div>
+     </div>
+
+     <div class="panel panel-primary">
+      <div class="panel panel-heading">
+        Create a New Event
+      </div>
+       <div class="panel-body">
+         <form method="POST">
+           <table class="table table-condensed table-striped">
+             <tr>
+               <td><label>Event Name</label></td>
+               <td>:</td>
+               <td><input type="text" name="ename"></td>
+             </tr>
+             <tr>
+               <td><label>Event Date</label></td>
+               <td>:</td>
+               <td><input type="date" name="edate"></td>
+             </tr>
+             <tr>
+               <td><label>Event Address</label></td>
+               <td>:</td>
+               <td><input type="text" name="eaddr"></td>
+             </tr>
+             <tr>
+               <td><label>Event Start Time</label></td>
+               <td>:</td>
+               <td><input type="time" name="estime"></td>
+             </tr>
+             <tr>
+               <td><label>Event End Time</label></td>
+               <td>:</td>
+               <td><input type="time" name="eetime"></td>
+             </tr>
+             <tr>
+               <td><label>Event Requirements</label></td>
+               <td>:</td>
+               <td><input type="text" name="ereq"></td>
+             </tr>
+           </table>
+           <div align="center">
+             <input type="submit" name="submit" class="btn btn-success">
+           </div>
+         </form>
        </div>
      </div>
   </section>
