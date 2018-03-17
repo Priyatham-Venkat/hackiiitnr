@@ -18,8 +18,12 @@ if(isset($_POST['submitj']))
 {
   $eid = $_POST['evid'] ;
   $join = mysqli_query($con,"insert into volunteer values('$eid','$name','orphanage');");
-  if(!$join)
-    die("Couldnt Query DB 2");
+    if(!$join)
+    {
+      echo "<script>";
+      echo "window.alert('You are already volunteer of this event')";
+      echo "</script>";
+    }
 }
 
 if(isset($_POST['submit']))
