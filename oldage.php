@@ -8,14 +8,9 @@ $location = $_SESSION['location'] ;
 $today = date("Y-m-d H:i:s");
 
 $con = mysqli_connect("localhost","root","","formycity") ;
-$res = mysqli_query($con,"select * from oldage where location = '$location' and date <= '$today' ;") ;
+$res = mysqli_query($con,"select * from oldage where location = '$location' and date >= '$today' ;") ;
 
-function join( $x )
-{
-  $join = mysqli_query($con, "insert into volunteer values('$x','$name') ; ");
-  if(!$join)
-    die("Couldnt query DB");
-}
+
 
 ?>
 
@@ -96,7 +91,7 @@ function join( $x )
              <td>Join</td>
            </th>
            <?php
-            while ( $row = mysqli_fetch_array($clq,MYSQLI_ASSOC) ) 
+            while ( $row = mysqli_fetch_array($res,MYSQLI_ASSOC) ) 
             {
               echo "<tr>";
               echo "<td>" . $row['eid'] . "</td>";
@@ -106,7 +101,7 @@ function join( $x )
               echo "<td>" . $row['estime'] . "</td>";
               echo "<td>" . $row['eetime'] . "</td>";
               echo "<td>" . $row['ereq'] . "</td>";
-              echo "<td> <button class="btn btn-success" onclick="<?php join($row['eid']) ?>">Join</button> </td>";
+              echo "<td> <button class='btn btn-success'> Join </button> </td>";
               echo "</tr>";
             }
            ?>
