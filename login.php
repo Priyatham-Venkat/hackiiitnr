@@ -16,8 +16,7 @@ $count = mysqli_num_rows($res);
 if($count == 1) 
       {
          $_SESSION['uname'] = $row['uname'];
-         $_SESSION['email'] = $row['email'];
-         $_SESSION['location'] = $row['location']; 
+         $_SESSION['email'] = $row['email']; 
          header("location: dashboard.php");
       }else 
       {
