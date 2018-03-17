@@ -63,6 +63,7 @@ if(isset($_POST['submit']))
 <section id="sidebar"> 
   <div class="white-label">
   </div> 
+  <br />
   <div id="sidebar-nav">   
     <ul>
       <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
