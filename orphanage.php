@@ -24,14 +24,14 @@ session_start();
   </div> 
   <div id="sidebar-nav">   
     <ul>
-      <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
       <li><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
-       <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
-      <li><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
-      <li><a href="awareness.php"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
-      <li><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
-      <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>
-      <li><a href="health.php"><i class="fa fa-calendar"></i>Health Drives</a></li>
+      <li class="active"><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>
+      <li><a href="#"><i class="fa fa-calendar"></i>Health Drives</a></li>
     </ul>
   </div>
 </section>
@@ -56,7 +56,7 @@ session_start();
     <div class="content-header">
     	<div class="row">
     		<div class="col-md-9">
-      <h1>Dashboard</h1>
+      <h1>ORPHANAGE Services</h1>
       	</div>
       	<div class="col-md-3" align="right">
       		<a href="logout.php" class="btn btn-danger">LOG OUT</a>
