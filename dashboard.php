@@ -13,7 +13,7 @@ $con = mysqli_connect("localhost","root","","formycity");
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="vendor/jquery/jquery.js"></script>
+	
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="js/dashboard.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
@@ -107,8 +107,8 @@ $con = mysqli_connect("localhost","root","","formycity");
       				PLEASE DONATE TOWARDS YOUR CITY
       			</div>
       			<div class="panel-body" align="center">
-      				<a href="#pay" class="btn btn-success" data-toggle="modal">Donate Here !</a>
-      				<div class="modal fade" id="pay">
+      				<a href="#payhere" class="btn btn-success" data-toggle="modal">Donate Here !</a>
+      				<div class="modal fade" id="payhere">
       					<div class="modal-dialog">
       						<div class="modal-content">
       							<div class="modal-header">
