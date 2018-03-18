@@ -13,7 +13,9 @@ $con = mysqli_connect("localhost","root","","formycity");
 	<link rel="stylesheet" href="css/dashboard.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="vendor/jquery/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="js/dashboard.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -105,7 +107,23 @@ $con = mysqli_connect("localhost","root","","formycity");
       				PLEASE DONATE TOWARDS YOUR CITY
       			</div>
       			<div class="panel-body" align="center">
-      				<a href="#" class="btn btn-success">Donate Here !</a>
+      				<a href="#pay" class="btn btn-success" data-toggle="modal">Donate Here !</a>
+      				<div class="modal fade" id="pay">
+      					<div class="modal-dialog">
+      						<div class="modal-content">
+      							<div class="modal-header">
+      								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      								<h4 class="modal-title">Pay through PayTM</h4>
+      							</div>
+      							<div class="modal-body">
+      								<img src="img/scan.png" alt="paytm payment">
+      							</div>
+      							<div class="modal-footer">
+      								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      							</div>
+      						</div>
+      					</div>
+      				</div>
       			</div>
       		</div>
       	</div>
@@ -115,7 +133,34 @@ $con = mysqli_connect("localhost","root","","formycity");
       		Latest Updates
       	</div>
       	<div class="panel-body">
-      		Sample Feed Data here !
+      		<div class="holder">
+  <ul id="ticker01" class="list-group" style="text-align: center;">
+							<li class="list-group-item"><span>18/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>18/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>18/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>18/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>17/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>16/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>15/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>15/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>15/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>15/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>15/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>14/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>14/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>14/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>14/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>14/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>13/03/2018</span><a href="#">Feed from Watson</a></li>
+							<li class="list-group-item"><span>13/03/2018</span><a href="#">Feed from Watson</a></li>
+				</ul>
+</div>
       	</div>
       </div>
   </div>
