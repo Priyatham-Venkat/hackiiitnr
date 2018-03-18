@@ -27,11 +27,11 @@ $con = mysqli_connect("localhost","root","","formycity");
     <ul>
       <li class="active"><a href="dashboard.php"><i class="fa fa-dashboard"></i> Dashboard</a></li>
       <li><a href="oldage.php"><i class="fa fa-calendar"></i>Old Age Home</a></li>
-       <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
+      <li><a href="orphanage.php"><i class="fa fa-calendar"></i>Orphanages</a></li>
       <li><a href="cleaning.php"><i class="fa fa-calendar"></i>Cleaning Campaign</a></li>
       <li><a href="awareness.php"><i class="fa fa-calendar"></i>Awareness Campaign</a></li>
       <li><a href="teaching.php"><i class="fa fa-calendar"></i>Teaching Campaign</a></li>
-      <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programmes</a></li>
+      <li><a href="plantation.php"><i class="fa fa-calendar"></i>Plantation Programme</a></li>
       <li><a href="health.php"><i class="fa fa-calendar"></i>Health Drives</a></li>
     </ul>
   </div>
@@ -110,7 +110,10 @@ $con = mysqli_connect("localhost","root","","formycity");
       		</div>
       	</div>
       </div>
-      <div class="panel panel-success">
+      <div class="panel panel-primary">
+      	<div class="panel panel-heading">
+      		Latest Updates
+      	</div>
       	<div class="panel-body">
       		Sample Feed Data here !
       	</div>

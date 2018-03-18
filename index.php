@@ -66,6 +66,7 @@ header("location:dashboard.php");
     <header>
       <br /><br /><br /><br />
       <img src="img/logo.png" width="100%">
+      <img src="img/1.jpeg" width="100%">
     </header>
    
     <!-- About Section -->
